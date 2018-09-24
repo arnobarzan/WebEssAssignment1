@@ -35,8 +35,6 @@ git config --global user.email jouwEmailadres
 Om te beginnen heb je een map nodig waarin je je project gaat maken. 
 Maak een folder 'EersteOpdracht' aan in verkenner, rechtklik op deze map en selecteer 'Git Bash here'. Je kan ook met behulp van het 'cd' commando in de juiste map geraken (zie cursus Linux).
 
-```
-
 Eenmaal in de map doe je ‘git init’, nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is. In de Windows Verkenner in de map EersteOpdracht is er nu een verborgen map ‘.git’. Zet verborgen items zichtbaar in het Beeld-lint en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
 
 ```
@@ -85,12 +83,11 @@ git diff
 ```
 ### Gebruik:
 
-Je zou het project waar deze cursus in zit, verder kunnen gebruiken, maar je gaat dat niet doen. In deze cursus maak je een heel nieuw project, zodat je alle stappen kan doorlopen.  
-Als eerste ga je een bestand in de map (die je daarnet aangemaakt hebt) zetten: ‘readme.md’.  
-Dit kan je in kladblok maken en bij opslaan als kiezen voor ‘alle bestanden’ en dan als extensie .md meegeven. Of je kan aan de prompt *notepad.exe readme.md* typen.
+Als eerste ga je een bestand in de map (die je daarnet aangemaakt hebt) zetten: ‘testfile.md’.  
+Dit kan je in kladblok maken en bij opslaan als kiezen voor ‘alle bestanden’ en dan als extensie .md meegeven. Of je kan aan de prompt *notepad.exe testfile.md* typen.
 
 ```
-C:\Users\UsersName\Documents\EersteOpdracht>notepad.exe readme.md
+C:\Users\UsersName\Documents\EersteOpdracht>notepad.exe testfile.md
 ```
 Nu opent kladblok en krijg je een pop-up: dit bestand bestaat niet, moet ik dit aanmaken? Je klikt ja. 
  
