@@ -1,5 +1,5 @@
 
-# Werken in Git in PowerShell
+# Werken in Git in Git Bash
 Auteur: Carine Derkoningen  
 Ondersteuning: Kris Hermans  
 Nagelezen door: Carina Medats  
@@ -13,12 +13,11 @@ In Git is het begin van een branch altijd een verwijzing (pointer)  naar de vers
 Je kan een branch zien als een kopie van de masterbranch op dat moment. Hier kan je dan in gaan werken en dit kan je dan op een gegeven moment weer gaan samenvoegen (= merge).  
 Later gaan we hier iets dieper op in, maar wil je dit al eens bekijken, vind je dit visueel voorgesteld op: [GitHub flow](https://guides.github.com/introduction/flow/).  
 
-Commandline: heel simpel: alle commando’s die te maken hebben met Git beginnen ook met git en dan een spatie. Let dus op als je git gebruikt in PowerShell, er zijn geen typische PowerShell commands voorzien voor git. Als je niet meer weet wat een commando juist doet, kan je altijd volgende commando typen:
+Commandline: heel simpel: alle commando’s die te maken hebben met Git beginnen ook met git en dan een spatie. Als je niet meer weet wat een commando juist doet, kan je altijd volgende commando typen:
  ```>git help [commandonaam]``` 
 
 Een laatste opmerking voor we beginnen, als je Git for Windows geïnstalleerd hebt, zijn de Git commando's die we behandelen beschikbaar in alle Command Line Interfaces in Windows, dus zowel in PowerShell als in de traditionele Command Prompt.
-In PowerShell wordt er bij sommige commando's soms een onterechte foutboodschap geprint, dit wil niet altijd zeggen dat er ook effectief iets fout gegaan is. Je kan ook gerust de gewone Command Prompt gebruiken, voor deze commands biedt PowerShell niet echt veel voordeel.
-Er is tenslotte ook een Git CMD geïnstalleerd samen met Git for Windows, ook deze kan je gerust gebruiken om deze oefeningen mee uit te voeren.
+Er zal ook een Git CMD geïnstalleerd samen met Git for Windows, ook deze kan je gerust gebruiken om deze oefeningen mee uit te voeren.
  
 ## Een lokale repository (repo) aanmaken
 
@@ -33,27 +32,17 @@ git config --global user.email jouwEmailadres
 
 ### Gebruik:
 
-Om te beginnen heb je een map nodig waarin je je project gaat maken. Je navigeert naar de plaats waar je die map wil plaatsen:  ‘cd [pad]’. Want standaard kom je immers in de automatisch gegenereerde map GitHub terecht.  
-Wij noemen deze map: ‘EersteProject’ en zetten die in de Documenten map op onze computer.  
-```
-C:\Users\UsersName\Documents\Github> cd ..
-C:\Users\UsersName\Documents> mkdir .\EersteProject\
-```
-Nu gaan we in die map staan:  
-```
-C:\Users\UsersName\Documents> cd .\EersteProject\
-```
-En je krijgt dan:  
-```
-C:\Users\UsersName\Documents\EersteProject>
-```
-
-Eenmaal in de map doe je ‘git init’, nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is. In de Windows Verkenner in de map EersteProject is er nu een verborgen map ‘.git’. Zet verborgen items zichtbaar in het Beeld-lint en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
+Om te beginnen heb je een map nodig waarin je je project gaat maken. 
+Maak een folder 'EersteOpdracht' aan in verkenner, rechtklik op deze map en selecteer 'Git Bash here'. Je kan ook met behulp van het 'cd' commando in de juiste map geraken (zie cursus Linux).
 
 ```
-C:\Users\UsersName\Documents\EersteProject> git init
-Initialized empty Git repository in C:/Users/UsersName/Documents/EersteProject/.git/
-C:\Users\UsersName\Documents\EersteProject>
+
+Eenmaal in de map doe je ‘git init’, nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is. In de Windows Verkenner in de map EersteOpdracht is er nu een verborgen map ‘.git’. Zet verborgen items zichtbaar in het Beeld-lint en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
+
+```
+C:\Users\UsersName\Documents\EersteOpdracht> git init
+Initialized empty Git repository in C:/Users/UsersName/Documents/EersteOpdracht/.git/
+C:\Users\UsersName\Documents\EersteOpdracht>
 ```
 Je kan nu bijvoorbeeld 'git status' uitvoeren, dit commando zal wat informatie over de huidige git repository tonen. Onder andere de huidige branch (master in dit geval) wordt getoond. 
 ```
@@ -68,16 +57,16 @@ Normaal gezien moet je steeds iemand eigenaar maken van het project, zodat Git w
 Indien je twijfelt, kan je altijd opvragen wie de huidige eigenaar is. Dit doe je met:  
 
 ```
-C:\Users\UsersName\Documents\EersteProject> git config user.name  
+C:\Users\UsersName\Documents\EersteOpdracht> git config user.name  
 ```
 
 Uiteraard is het ook mogelijk dat de juiste gebruiker reeds ingesteld is.
 Iemand eigenaar maken doe je dan als volgt:  
 
 ```
-C:\Users\UsersName\Documents\EersteProject> git config --global user.name 'gebruikersnaam'
-C:\Users\UsersName\Documents\EersteProject> git config --global user.email gebruikersemail
-C:\Users\UsersName\Documents\EersteProject> git commmit --amend --reset-author
+C:\Users\UsersName\Documents\EersteOpdracht> git config --global user.name 'gebruikersnaam'
+C:\Users\UsersName\Documents\EersteOpdracht> git config --global user.email gebruikersemail
+C:\Users\UsersName\Documents\EersteOpdracht> git commmit --amend --reset-author
 ```
 Die laatste regel zorgt ervoor, dat indien er al iemand anders als user ingesteld staat, deze vervangen wordt door de nieuwe eigenaar.  
 Indien je iemand enkel van dit project gebruiker wil maken, laat je die global in bovenstaande commando's weg.  
@@ -101,7 +90,7 @@ Als eerste ga je een bestand in de map (die je daarnet aangemaakt hebt) zetten: 
 Dit kan je in kladblok maken en bij opslaan als kiezen voor ‘alle bestanden’ en dan als extensie .md meegeven. Of je kan aan de prompt *notepad.exe readme.md* typen.
 
 ```
-C:\Users\UsersName\Documents\EersteProject>notepad.exe readme.md
+C:\Users\UsersName\Documents\EersteOpdracht>notepad.exe readme.md
 ```
 Nu opent kladblok en krijg je een pop-up: dit bestand bestaat niet, moet ik dit aanmaken? Je klikt ja. 
  
@@ -110,7 +99,7 @@ Nu opent kladblok en krijg je een pop-up: dit bestand bestaat niet, moet ik dit 
 Je zet  \*Hier komt het doel van ons project in het bestand\*  en slaat dit op en sluit het bestand.  Opmerking: als je die pop-up niet gekregen hebt: doe dan alsnog ‘opslaan als’ en sla het op als readme.md , alle bestanden(geen tekstbestand!!!)  
 Je typt nu ‘git status’: Je krijgt de melding dat er nog ‘Untracked files’ zijn en dat je die best toevoegt aan datgene dat je wil committen.  
 ```
-C:\Users\UsersName\Documents\EersteProject> git status
+C:\Users\UsersName\Documents\EersteOpdracht> git status
 ```
 Je ziet in de output van dit commando dat er Untracked Files zijn. Deze files zijn nog niet toegevoegd en staan enkel lokaal in je Working Area.
 In sommige CLI's met specifieke functies voor Git, kan de naam van de branch in het rood weergegeven worden. Dit wil zeggen dat je working area niet gelijk is aan je repo.   
@@ -118,17 +107,17 @@ Het is niet omdat het in de map zit, dat het ook in Git zit. (zie slides en vori
 Als je maar 1 bestand wil toevoegen aan Git, kan je het volgende doen:
 git add bestandsnaam 
 ```
-C:\Users\UsersName\Documents\EersteProject> git add readme.md
+C:\Users\UsersName\Documents\EersteOpdracht> git add readme.md
 ```
 Als je meerdere bestanden hebt die je wil toevoegen, ga je ze niet op die manier toevoegen aan de Staging area, maar doe je alles in 1 keer:  
 ```
-C:\Users\UsersName\Documents\EersteProject> git add . 
+C:\Users\UsersName\Documents\EersteOpdracht> git add . 
 ```
 Als je nu wil dat de huidige toestand van alle bestanden in je Staging area gezien worden als een nieuwe versie van je project, dan moet je dat met een commit in de repo zetten.  
 Hiervoor moeten we het git commit commando uitvoeren. Voordat we dit doen, stellen we nog even in dat we de commit message willen ingeven via notepad.
 Voer het volgende commando uit:
 ```
-C:\Users\UsersName\Documents\EersteProject> git config --global core.editor "notepad" 
+C:\Users\UsersName\Documents\EersteOpdracht> git config --global core.editor "notepad" 
 ```
 git commit : op deze manier opent zich nu kladblok/notepad, opdat je een commitboodschap kan meegeven. Geef altijd een duidelijke boodschap mee, met wat veranderd is ten opzichte van de vorige versie. Dit is handig als je ooit een vorige versie van je project nodig hebt.  
 Je kan ook *git commit -m “boodschap” * ingeven. Nu krijg je geen pop-up meer, want je geeft op deze manier de commit boodschap als parameter mee met het commando.
@@ -158,12 +147,12 @@ Alle mogelijkheden met betrekking tot gebruik opgelijst :[git diff](https://git-
 Er wordt door Git een tree opgebouwd, waarin de verschillende commits worden opgenomen. Wil je deze tree zien, dan doe je:
 
 ```
-C:\Users\UsersName\Documents\EersteProject> git worktree list
+C:\Users\UsersName\Documents\EersteOpdracht> git worktree list
 ```
 
 Wil je de info duidelijker krijgen:  
 ```
-C:\Users\UsersName\Documents\EersteProject> git worktree list --porcelain
+C:\Users\UsersName\Documents\EersteOpdracht> git worktree list --porcelain
 ```  
 
 
@@ -185,7 +174,7 @@ Je krijgt nu een invulveld.
  
 ![invulveld](images/newRepo3.PNG)  
 
-We geven het dezelfde naam als ons lokaal project ‘EersteProject’. Je geeft een korte uitleg over jouw project bij de beschrijving. Vermits wij in ons project een Readme.md hebben gemaakt, gaan we dit hier niet meer aanvinken.   
+We geven het dezelfde naam als ons lokaal project ‘EersteOpdracht’. Je geeft een korte uitleg over jouw project bij de beschrijving. Vermits wij in ons project een Readme.md hebben gemaakt, gaan we dit hier niet meer aanvinken.   
 In je eerste project, gaan we ook geen .gitignore laten genereren. Weet dat je in een project met code altijd een .gitignore opneemt. In punt 4 gaan we dieper in op dit soort bestand en waarom het goed is om altijd een .gitignore bestand in je project te zetten. Je kan dit dan later nog toevoegen.  
 Nu klik je op de knop ‘Create repository’ en je remote repo is aangemaakt.  
 Nu moet je nog een verbinding maken met je lokale project. In GitHub opent zich nu een venster dat je helpt met hoe je dat nu best doet.  
@@ -195,8 +184,8 @@ Nu moet je nog een verbinding maken met je lokale project. In GitHub opent zich 
 Vermits je lokaal je project al volledig klaar hebt staan, ga je dit nu nog moeten pushen naar GitHub. We kiezen hiervoor de optie om dit vanaf de prompt te doen.  
  
 ```
-C:\Users\UsersName\Documents\EersteProject>git remote add origin https://github.com/gebruikersnaam/projectnaam.git 
-C:\Users\UsersName\Documents\EersteProject>git push -u origin master
+C:\Users\UsersName\Documents\EersteOpdracht>git remote add origin https://github.com/gebruikersnaam/projectnaam.git 
+C:\Users\UsersName\Documents\EersteOpdracht>git push -u origin master
 ```
 Nu heb je een link gelegd met GitHub en heb je je project geüploaded naar GitHub. En dan krijg je een boodschap wat hij doet en als laatste moet dan staan: ‘Branch master set up to track remote branch master from origin'.  
 
@@ -210,9 +199,9 @@ Aan de prompt typ je ls. Je ziet dat in het project nu 2 bestanden zitten, maar 
 
 ![ls git status voorbeeld](images/lsStatus.PNG)   
 
-Je doet dus terug ```C:\Users\UsersName\Documents\EersteProject>git add testbestand.txt``` om het bestand te stagen.
+Je doet dus terug ```C:\Users\UsersName\Documents\EersteOpdracht>git add testbestand.txt``` om het bestand te stagen.
 Nu doen we weer een commit en *lokaal* zit alles in de master branch. Maar om deze versie nu ook online te plaatsen in de repository op GitHub, moet je opnieuw een push commando utivoeren.
-Dus doe je nu weer: ```C:\Users\UsersName\Documents\EersteProject> git push -u origin master ```. Hierna heb je lokaal en remote dezelfde versie van je project staan.  
+Dus doe je nu weer: ```C:\Users\UsersName\Documents\EersteOpdracht> git push -u origin master ```. Hierna heb je lokaal en remote dezelfde versie van je project staan.  
 
 ## Remote pullen naar lokaal.
 ### Te gebruiken commando's:
@@ -224,7 +213,7 @@ Vooraleer je verder werkt aan je project, ga je altijd na of je lokaal dezelfde 
 Dit doe je met git pull origin master. Als er niets gewijzigd is, krijg je : Already up-to-date.  
 
 ```
-C:\Users\UsersName\Documents\EersteProject>git pull origin master
+C:\Users\UsersName\Documents\EersteOpdracht>git pull origin master
 ```
 Maar nu ga je een verandering aanbrengen remote: Zet in het bestand ‘testBestand.txt’ wat tekst via de GitHub website.
 
@@ -238,7 +227,7 @@ In dit venster zet je tekst in het bestand. Je vult een commit boodschap in en k
 Maar nu staat die aanpassing wel online, maar die zit niet in onze lokale repo.  
 Laat je echter niet vangen: als je nu lokaal git status doet, ga je nog krijgen dat alles ok is, aangezien je lokale git niet weet dat er remote wijzigingen gedaan zijn in je repo. Git status gaat namelijk enkel kijken of jij lokaal nog iets hebt toegevoegd, dat nog niet gecommit is. Nu gebruik je   
 
- ```C:\Users\UsersName\Documents\EersteProject]>git pull origin master```   
+ ```C:\Users\UsersName\Documents\EersteOpdracht]>git pull origin master```   
 
 en nu krijg je weer een hele lijst van acties. Als je gaat kijken dan zegt de tekst dat 1 bestand gewijzigd is. 
 
@@ -314,7 +303,7 @@ Je gaat in die nieuwe branch aan de slag: je maakt nieuwe dingen, je test deze u
 Je werkt weer vanuit je CLI naar keuze:  
 Je maakt nu een nieuwe branch ‘develop’ met git branch develop.  
 ```
-C:\Users\UsersName\Documents\EersteProject> git branch develop
+C:\Users\UsersName\Documents\EersteOpdracht> git branch develop
 ```
 
 ![nieuwe branch aanmaken](images/newBranch.PNG)  
