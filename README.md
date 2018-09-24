@@ -142,7 +142,7 @@ C:\Users\UsersName\Documents\EersteOpdracht> git log
 ```
 
 
-## Lokale repo pushen naar remote.
+## Lokale repo pushen naar remote
 ### Te gebruiken commando's:
 ```
 (git remote add origin https://github.com/gebruikersnaam/projectnaam.git)
@@ -151,15 +151,15 @@ ls
 git status
 ```
 ### Gebruik:
-De aanpassingen bestaan nog steeds enkel lokaal. Als je met meerderen aan het project wil werken, zien de anderen nog niet dat er iets gewijzigd is. Hiervoor moet je nu je code pushen naar GitHub.   
+De aanpassingen bestaan nog steeds enkel lokaal. Als je met meerderen aan het project wil werken, zien de anderen nog niet dat er iets gewijzigd is. Hiervoor moet je nu je code pushen naar GitHub:
 
 ``` 
 C:\Users\UsersName\Documents\EersteOpdracht>git pull
 C:\Users\UsersName\Documents\EersteOpdracht>git push -u origin master
 ```
-Nu heb je je aanpassingen geüploaded naar GitHub.  
+Nu heb je je aanpassingen geüploaded naar GitHub (de git pull wordt verder uitgelegd, onthou dat je deze best altijd doet voor een push).  
 
-Maak nu in Windows verkenner in de projectmap een tekstbestand testBestand.txt .   
+Maak nu in Windows verkenner in de projectmap een tekstbestand **testBestand.txt** .   
 
 Aan de prompt typ je `ls` en krijg je een lijst met de aanwezige bestanden en mappen. Bij een `git status` zie je nu dat de nieuwe file opnieuw aangegeven wordt bij Untracked Files. Je krijgt de boodschap dat je branch up-to-date is met ‘origin/master’, maar dat er wel nog een bestand in zit, dat niet tot het Git project behoort (en dus enkel in de lokale Working area zit). En je krijgt dan de boodschap hoe je dat bestand kan opnemen in de staging area, zodat bij een volgende commit het automatisch in je masterbranch zit.  
 
@@ -167,7 +167,7 @@ Je doet dus terug ```C:\Users\UsersName\Documents\EersteOpdracht>git add testbes
 Nu doen we weer een commit en *lokaal* zit alles in de master branch. Maar om deze versie nu ook online te plaatsen in de repository op GitHub, moet je opnieuw een push commando utivoeren.
 Dus doe je nu weer: ```C:\Users\UsersName\Documents\EersteOpdracht> git push -u origin master ```. Hierna heb je lokaal en remote dezelfde versie van je project staan.  
 
-## Remote pullen naar lokaal.
+## Remote pullen naar lokaal
 ### Te gebruiken commando's:
 ```
 git pull origin master
@@ -179,7 +179,7 @@ Dit doe je met git pull origin master. Als er niets gewijzigd is, krijg je : Alr
 ```
 C:\Users\UsersName\Documents\EersteOpdracht>git pull origin master
 ```
-Maar nu ga je een verandering aanbrengen remote: Zet in het bestand ‘testBestand.txt’ wat tekst *via de GitHub website*.
+Maar nu ga je een verandering aanbrengen remote: Zet in het bestand ‘testBestand.txt’ wat tekst **via de GitHub website**.
 
 Een bestand editen doe je door op de naam van het bestand te klikken en dan op het potlood in het lint.  
 In dit venster zet je tekst in het bestand. Je vult een commit boodschap in en klikt op de knop 'Commit changes'.  
@@ -194,118 +194,6 @@ en nu krijg je weer een hele lijst van acties. Als je gaat kijken dan zegt de te
 >**Dus**: voordat je lokaal begint te werken altijd een pull doen, ook al lijkt alles ok, bijvoorbeeld na een git status commando.  
 Zo vermijd je al een eerste reeks problemen, wanneer je jouw aanpassingen wil pushen naar remote. 
 
-
-
- 
-## Een lokale repository (repo) aanmaken
-
-### Te gebruiken commando's:
-
-```
-cd [pad]
-git init
-git config --global user.name “naam”
-git config --global user.email jouwEmailadres
-```
-
-### Gebruik:
-
-Om te beginnen heb je een map nodig waarin je je project gaat maken. 
-Maak een folder 'EersteOpdracht' aan in verkenner, rechtklik op deze map en selecteer 'Git Bash here'. Je kan ook met behulp van het 'cd' commando in de juiste map geraken (zie cursus Linux).
-
-Eenmaal in de map doe je ‘git init’, nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is. In de Windows Verkenner in de map EersteOpdracht is er nu een verborgen map ‘.git’. Zet verborgen items zichtbaar in het Beeld-lint en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
-
-```
-C:\Users\UsersName\Documents\EersteOpdracht> git init
-Initialized empty Git repository in C:/Users/UsersName/Documents/EersteOpdracht/.git/
-C:\Users\UsersName\Documents\EersteOpdracht>
-```
-Je kan nu bijvoorbeeld 'git status' uitvoeren, dit commando zal wat informatie over de huidige git repository tonen. Onder andere de huidige branch (master in dit geval) wordt getoond. 
-```
-> git status
-On branch master
-
-Initial commit
-
-nothing to commit (create/copy files and use "git add" to track)
-```
-Normaal gezien moet je steeds iemand eigenaar maken van het project, zodat Git weet wie de wijzigingen in dit project doet.   
-Indien je twijfelt, kan je altijd opvragen wie de huidige eigenaar is. Dit doe je met:  
-
-```
-C:\Users\UsersName\Documents\EersteOpdracht> git config user.name  
-```
-
-Uiteraard is het ook mogelijk dat de juiste gebruiker reeds ingesteld is.
-Iemand eigenaar maken doe je dan als volgt:  
-
-```
-C:\Users\UsersName\Documents\EersteOpdracht> git config --global user.name 'gebruikersnaam'
-C:\Users\UsersName\Documents\EersteOpdracht> git config --global user.email gebruikersemail
-C:\Users\UsersName\Documents\EersteOpdracht> git commmit --amend --reset-author
-```
-Die laatste regel zorgt ervoor, dat indien er al iemand anders als user ingesteld staat, deze vervangen wordt door de nieuwe eigenaar.  
-Indien je iemand enkel van dit project gebruiker wil maken, laat je die global in bovenstaande commando's weg.  
-
-Je hebt nu een lokaal project klaar staan om met versiebeheer in te werken. Momenteel is dit project wel nog leeg, dus gaan we verder met het toevoegen van bestanden.
-
-
-Maar op dit moment bestaat ons project nog maar enkel lokaal. Je hebt bij het accepteren van de GitHub classroom invite een eigen repository gekregen. Deze repository gaan we nu koppelen aan onze lokale repository!
- 
-```
-C:\Users\UsersName\Documents\EersteOpdracht>git remote add origin https://github.com/gebruikersnaam/projectnaam.git 
-C:\Users\UsersName\Documents\EersteOpdracht>git pull
-C:\Users\UsersName\Documents\EersteOpdracht>git push -u origin master
-```
-Nu heb je een link gelegd met GitHub en heb je je project geüploaded naar GitHub. En dan krijg je een boodschap wat hij doet en als laatste moet dan staan: ‘Branch master set up to track remote branch master from origin'.  
-
-![boodschap](images/pushMaster.PNG)  
-
-Maak nu in Windows verkenner in de projectmap een tekstbestand testBestand.txt .   
-
-![verkenner](images/testbestand.PNG)  
-
-Aan de prompt typ je ls. Je ziet dat in het project nu 2 bestanden zitten, maar dit zegt niet veel. Bij een git status zie je nu dat de nieuwe file opnieuw aangegeven wordt bij Untracked Files. Je krijgt de boodschap dat je branch up-to-date is met ‘origin/master’, maar dat er wel nog een bestand in zit, dat niet tot het Git project behoort (en dus enkel in de lokale Working area zit). En je krijgt dan de boodschap hoe je dat bestand kan opnemen in de staging area, zodat bij een volgende commit het automatisch in je masterbranch zit.  
-
-![ls git status voorbeeld](images/lsStatus.PNG)   
-
-Je doet dus terug ```C:\Users\UsersName\Documents\EersteOpdracht>git add testbestand.txt``` om het bestand te stagen.
-Nu doen we weer een commit en *lokaal* zit alles in de master branch. Maar om deze versie nu ook online te plaatsen in de repository op GitHub, moet je opnieuw een push commando utivoeren.
-Dus doe je nu weer: ```C:\Users\UsersName\Documents\EersteOpdracht> git push -u origin master ```. Hierna heb je lokaal en remote dezelfde versie van je project staan.  
-
-## Remote pullen naar lokaal.
-### Te gebruiken commando's:
-```
-git pull origin master
-```
-### Gebruik:
-Vooraleer je verder werkt aan je project, ga je altijd na of je lokaal dezelfde versie hebt als remote. Het kan immers zijn dat een collega nog verder aan het project heeft gewerkt en dat jij niet meer de laatste versie lokaal hebt staan. Om problemen te vermijden ga je dus altijd eerst de laatste versie van de repo van GitHub afhalen.  
-Dit doe je met git pull origin master. Als er niets gewijzigd is, krijg je : Already up-to-date.  
-
-```
-C:\Users\UsersName\Documents\EersteOpdracht>git pull origin master
-```
-Maar nu ga je een verandering aanbrengen remote: Zet in het bestand ‘testBestand.txt’ wat tekst via de GitHub website.
-
-![verandering](images/verandering1.PNG)
-
-Een bestand editen doe je door op de naam van het bestand te klikken en dan op het potlood in het lint.  
-In dit venster zet je tekst in het bestand. Je vult een commit boodschap in en klikt op de knop 'Commit changes'.  
-
-![venster](images/verandering2.PNG)
- 
-Maar nu staat die aanpassing wel online, maar die zit niet in onze lokale repo.  
-Laat je echter niet vangen: als je nu lokaal git status doet, ga je nog krijgen dat alles ok is, aangezien je lokale git niet weet dat er remote wijzigingen gedaan zijn in je repo. Git status gaat namelijk enkel kijken of jij lokaal nog iets hebt toegevoegd, dat nog niet gecommit is. Nu gebruik je   
-
- ```C:\Users\UsersName\Documents\EersteOpdracht]>git pull origin master```   
-
-en nu krijg je weer een hele lijst van acties. Als je gaat kijken dan zegt de tekst dat 1 bestand gewijzigd is. 
-
-![venster](images/afterPull.PNG)
- 
->**Dus**: voordat je lokaal begint te werken altijd een pull doen, ook al lijkt alles ok, bijvoorbeeld na een git status commando.  
-Zo vermijd je al een eerste reeks problemen, wanneer je jouw aanpassingen wil pushen naar remote. 
- 
 ## Merge conflict oplossen.
 ### Te gebruiken commando's:
 alle reeds gebruikte commando's
@@ -314,37 +202,21 @@ Zoals hierboven aangegeven, kunnen er ook problemen opduiken als je jouw aanpass
 Hiervoor ga je nu zelf een probleem uitlokken.  
 In GitHub voeg je in het testbestand.txt een tweede regel tekst toe en commit dit.  
 
-![testbestand](images/merge1.PNG)  
-
 Lokaal ga je in testbestand.txt ook een tweede regel tekst toevoegen.  
-
-![testbestand.txt](images/merge2.PNG)  
  
-Nu open je PowerShell. In je project folder doe je git status. Nu zie je dat je lokaal iets hebt veranderd en dat je dat nog moet toevoegen aan je project. Doe nu weer git add testBestand.txt en een commit. Nu ga je dit naar je remote repo pushen.  
-
-![push](images/merge3.PNG).   
+Nu open je Git bash. In je project folder doe je git status. Nu zie je dat je lokaal iets hebt veranderd en dat je dat nog moet toevoegen aan je project. Doe nu weer git add testBestand.txt en een commit. Nu ga je dit naar je remote repo pushen.  
 
 Oei, dit lukt precies niet: remote staat er een andere versie van je project dan die, die je lokaal gewijzigd hebt. Voorstel is om eerst een git pull uit te voeren, zodat je lokaal project up-to-date is. Dit ga je nu proberen.   
-
-![pull](images/merge4.PNG)  
 
 Maar ook dit gaat niet zomaar: je ziet dat er nu 2 reeksen getallen verschijnen en dat er een tweerichtingspijl na master staat. Dit wil zeggen dat je dit eerst moet oplossen, voordat je verder kunt. Je opent nu het bestand waar zich een ‘Merge conflict’ voordoet.   
 Dit doe je via de prompt: notepad.exe .\testbestand.txt. Nu opent zich het bestand en je ziet dat beide aanpassingen in je document zijn opgenomen, maar dat er nog dingen zijn bijgekomen.   
 
-![mergeConflictBestand](images/merge5.PNG)  
-
 Als eerste staan er kleiner dan tekens gevolgd door HEAD. HEAD is een pointer met metadata van de laatste commit. Die geeft aan wat in de versie die je wil mergen staat. Daaronder zie je gelijkheidstekens en daaronder dan de regel die anders is in de versie die jij wil mergen, met daaronder groter dan tekens en dan de id van de commit die het probleem geeft. Die vind je ook op GitHub terug.  
 Jij moet nu bepalen wat juist is. Met andere woorden, je gaat het bestand manueel aanpassen en opslaan.   
 
-![mergeSolvedBestand](images/merge6.PNG)  
-
 Ga dit terug toevoegen en committen. Nu push je dit terug naar remote. Je ziet dat het nu wel lukt.  
-
-![pushAfterSolvingMergeConflict](images/merge7.PNG)  
   
 En in je browser refresh je GitHub, je gaat kijken naar de commits en zie je de veschillende commits.  
-
-![de verschillende commits](images/merge8.PNG) 
  
 Dus beide commits zijn opgenomen in de geschiedenis van je versiebeheer, evenals de commit die nodig was om het probleem op te lossen.  
 Je ziet: het was nu maar 1 regel en toch vroeg het al je aandacht om dit juist op te lossen. Stel je eens voor dat je een groot aantal regels code geschreven hebt en dit probleem doet zich dan voor!  
@@ -418,6 +290,16 @@ Een voordeel van werken met GitHub is de mogelijkheid om te werken met issues. D
 Verder kan je issues ook gebruiken om bugs op te lijsten. Als docent kunnen wij die issues ook gebruiken om feedback of hulp te geven.
 De tekst in de issues geef je ook in met de MarkDown opmaak die je net geleerd hebt.
 
+## Een lokale repository (repo) aanmaken
+
+### Te gebruiken commando's:
+
+```
+cd [pad]
+git init
+git config --global user.name “naam”
+git config --global user.email jouwEmailadres
+```
 
 
 
