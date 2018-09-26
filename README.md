@@ -20,6 +20,9 @@ Commandline: heel simpel: alle commando’s die te maken hebben met Git beginnen
 Een laatste opmerking voor we beginnen, als je Git for Windows geïnstalleerd hebt, zijn de Git commando's die we behandelen beschikbaar in alle Command Line Interfaces in Windows, dus zowel in PowerShell als in de traditionele Command Prompt.
 Er zal ook een Git Bash geïnstalleerd samen met Git for Windows, ook deze kan je gerust gebruiken om deze oefeningen mee uit te voeren.
 
+## Installatie 
+Installeer Git op je computer via deze [link](https://git-scm.com/download/win). 
+
 ## Een externe repository clonen
 
 ### Te gebruiken commando's:
@@ -33,9 +36,9 @@ ls
 Om te beginnen heb je een map nodig waarin je je project gaat maken. 
 Maak een folder 'EersteOpdracht' aan in verkenner, rechtsklik op deze map en selecteer 'Git Bash here'. Je kan ook met behulp van het 'cd' commando in de juiste map geraken (zie cursus Linux).
 
-Je hebt bij het accepteren van de GitHub classroom invite een eigen repository gekregen. Deze repository gaan we nu koppelen aan onze lokale repository!
+Je hebt bij het accepteren van de GitHub classroom invite een eigen repository gekregen, namelijk de repository die je nu hier ziet! Deze repository gaan we nu koppelen aan onze lokale repository.
 
-Eenmaal in de map doe je ‘git clone https://github.com/gebruikersnaam/projectnaam.git .’ (vergeet het punt niet), nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is. In de Windows Verkenner in de map EersteOpdracht is er nu een verborgen map ‘.git’. Zet verborgen items zichtbaar in het Beeld-lint en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
+Eenmaal in de map doe je ‘git clone https://github.com/gebruikersnaam/projectnaam.git .’ (**vergeet het punt niet**), nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is, en heb je tegelijk de startbestanden gedownload. In de Windows Verkenner in de map EersteOpdracht is er nu een verborgen map ‘.git’. [Zet verborgen items zichtbaar in het Beeld-lint](https://support.microsoft.com/en-us/help/4028316/windows-view-hidden-files-and-folders-in-windows-10) en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
 
 Je kan nu bijvoorbeeld 'git status' uitvoeren, dit commando zal wat informatie over de huidige git repository tonen. Onder andere de huidige branch (master in dit geval) wordt getoond. 
 ```
