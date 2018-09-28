@@ -38,7 +38,7 @@ Maak een folder 'EersteOpdracht' aan in verkenner, rechtsklik op deze map en sel
 
 Je hebt bij het accepteren van de GitHub classroom invite een eigen repository gekregen, namelijk de repository die je nu hier ziet! Deze repository gaan we nu koppelen aan onze lokale repository.
 
-Eenmaal in de map doe je ‘git clone https://github.com/gebruikersnaam/projectnaam.git .’ (**vergeet het punt niet**), nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is, en heb je tegelijk de startbestanden gedownload. In de Windows Verkenner in de map EersteOpdracht is er nu een verborgen map ‘.git’. [Zet verborgen items zichtbaar in het Beeld-lint](https://support.microsoft.com/en-us/help/4028316/windows-view-hidden-files-and-folders-in-windows-10) en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
+Eenmaal in de map doe je ```git clone https://github.com/gebruikersnaam/projectnaam.git .``` (**vergeet het punt niet**), nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is, en heb je tegelijk de startbestanden gedownload. In de Windows Verkenner in de map EersteOpdracht is er nu een verborgen map ‘.git’. [Zet verborgen items zichtbaar in het Beeld-lint](https://support.microsoft.com/en-us/help/4028316/windows-view-hidden-files-and-folders-in-windows-10) en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
 
 Je kan nu bijvoorbeeld 'git status' uitvoeren, dit commando zal wat informatie over de huidige git repository tonen. Onder andere de huidige branch (master in dit geval) wordt getoond. 
 ```
