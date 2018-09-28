@@ -197,7 +197,7 @@ en nu krijg je weer een hele lijst van acties. Als je gaat kijken dan zegt de te
 >**Dus**: voordat je lokaal begint te werken altijd een pull doen, ook al lijkt alles ok, bijvoorbeeld na een git status commando.  
 Zo vermijd je al een eerste reeks problemen, wanneer je jouw aanpassingen wil pushen naar remote. 
 
-## Merge conflict oplossen.
+## Extra: Merge conflict oplossen.
 ### Te gebruiken commando's:
 alle reeds gebruikte commando's
 ### Gebruik:
@@ -230,7 +230,7 @@ Een andere manier om problemen voor te blijven is goede afspraken maken: Werkver
 Vroeg of laat ga je toch een merge probleem tegen komen, weet dan dat je hier geleerd hebt hoe je die best oplost. Soms moet je op zo een moment met je collega(‘s) overleggen hoe het moet opgelost worden. Vergeet dan niet dat issues, in punt 6, hier een goed hulpmiddel kunnen zijn. (Pull requests kunnen hier ook voor gebruikt worden, maar dit wordt in deze cursus niet behandeld.)   
 Bepaalde GUI's voor Git voorzien ook mooiere voorstellingen van merge conflicts en geven je een aantal tools om deze op te lossen.
 
-## Extra branchs
+## Extra: Branches
 ### Te gebruiken commando's:
 ```
 git branch branchnaam.
@@ -250,18 +250,9 @@ Je maakt nu een nieuwe branch ‘develop’ met git branch develop.
 ```
 C:\Users\UsersName\Documents\EersteOpdracht> git branch develop
 ```
-
-![nieuwe branch aanmaken](images/newBranch.PNG)  
-
 Met ```git checkout develop ``` switch je naar de branch develop. Nu ga je GitHub ook laten weten dat je een nieuwe branch hebt: ```git push origin develop```  
-Op GitHub is er nu een branch bijgekomen.  
+Op GitHub is er nu een branch bijgekomen en de inhoud is voorlopig identiek aan de master branch.
 
-![nieuwe branch GitHub](images/newbranchGH.PNG)   
-
-En de inhoud is identiek aan de master branch   
-
-![nieuwe branch inhoud](images/newBranchContent.PNG)   
- 
 Maar nu komt het: hoe weet je nu welke repo branch er lokaal staat? Dit kan je altijd bekijken met het git status commando. Er zijn ook andere CLI's of GUI's die de huidige actieve branch opvallender tonen, hiermee zal je vroeg of laat ook zeker nog mee in aanraking komen.
 Sluit de shell af met exit aan de prompt te typen en dan enter te drukken.  
 
@@ -271,29 +262,25 @@ Nu doe je checkout master. Ga nu in de verkenner kijken of je nieuwe bestand nog
 Op GitHub kan je ook gaan kijken of de 2 branchs nog gelijk zijn aan elkaar.  
 Je ziet, werken met branchs is zeer krachtig. Dus check zeker altijd in welke branch je wijzigingen aanbrengt.  
 
-## Concept van een "propere" repo: .gitignore bestand toevoegen.
+## Extra: Concept van een "propere" repo: .gitignore bestand toevoegen.
 Als je een nieuw project aanmaakt op GitHub, kan je naast een Readme.md ook een .gitignore bestand automatisch genereren. Dit is een goed idee, zo komen er geen onnodige dingen in je project, die je project alleen maar zouden verzwaren of bij iemand anders fouten geven.    
 Als je hier aangeeft dat je in jouw project gaat coderen in Java, zal dat .gitignore bestand ervoor zorgen dat er geen .class files in het Git project zitten.  
 Je kan later dit .gitignore bestand ook nog gaan toevoegen. Op GitHub staan er voorbeelden, die je zo kan overnemen.  
 [gitignore voorbeelden](https://www.gitignore.io/). Deze site  kan een hulpmiddel zijn om een .gitignore file voor jouw project te genereren.   
 Denk er wel aan, dat als je later een .gitignore file toevoegt, deze er enkel voor zorgt dat bepaalde dingen niet meer worden meegenomen. Dingen die je al door een commit / push aan je project hebt toegevoegd voor die .gitignore blijven erin en moet je dus zelf gaan verwijderen.   
 
-## GitHub MarkDown gebruiken
+## Extra: GitHub MarkDown gebruiken
 Deze cursus is opgemaakt door gebruik te maken van GitHub Markdown. 
 Als je tekst in je project wil toevoegen, doe dit niet in een Word bestand, maar in een .md bestand. Het voordeel van het gebruik van dit soort bestanden, is het feit dat Git elke verandering hierin ook detecteert. Je kan dus ook in je tekstdocumenten aan versiebeheer doen. Documenten opgemaakt met Word zijn digitale bestanden en wijzigingen hierin worden door Git niet gedetecteerd.  
 De regels zijn heel simpel: door het toevoegen van bepaalde tekens of spaties gaat GitHub een bepaalde opmaak toepassen op je document. Alle regels hier uitgebreid weergeven zou simpel knip en plakwerk worden uit de site die GitHub ter beschikking stelt. Daarom bekijk je best de spelregels op:   
 [GitHub MarkDown spelregels](http://www.markdowntutorial.com/). 
 
-### *Oefeningen*
-De start van deze cursus is een .docx document, nl: 'Introductie en installatie Git en GitHub.docx'. Maak dit document in de cursus repository in GitHub met MarkDown (.md bestand). Jouw document moet eender zijn als het oorspronkelijke document.
-Tip: de afbeeldingen zitten reeds in de folder images, die ook bij deze cursus hoort.  
-
-## Werken met issues.
+## Extra: Werken met issues.
 Een voordeel van werken met GitHub is de mogelijkheid om te werken met issues. Deze kan je gebruiken om een planning op te maken van alle taken die je dient uit te voeren. Het voordeel van werken met issues is o.a. het feit dat je een mail krijgt, iedere keer iemand een antwoord geeft op een issue.
 Verder kan je issues ook gebruiken om bugs op te lijsten. Als docent kunnen wij die issues ook gebruiken om feedback of hulp te geven.
 De tekst in de issues geef je ook in met de MarkDown opmaak die je net geleerd hebt.
 
-## Een lokale repository (repo) aanmaken
+## Extra: Een lokale repository (repo) aanmaken
 
 ### Te gebruiken commando's:
 
