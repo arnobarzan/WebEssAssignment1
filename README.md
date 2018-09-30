@@ -1,4 +1,4 @@
-
+﻿
 # Werken in Git in Git Bash
 Auteur: Carine Derkoningen  
 Ondersteuning: Kris Hermans  
@@ -65,7 +65,7 @@ C:\Users\UsersName\Documents\EersteOpdracht> git config --global user.email gebr
 C:\Users\UsersName\Documents\EersteOpdracht> git commmit --amend --reset-author
 ```
 Die laatste regel zorgt ervoor, dat indien er al iemand anders als user ingesteld staat, deze vervangen wordt door de nieuwe eigenaar.  
-Indien je iemand enkel van dit project gebruiker wil maken, laat je die global in bovenstaande commando's weg.  
+Indien je iemand enkel van dit project gebruiker wil maken, laat je die global in bovenstaande commando's weg.
 
 Je hebt nu een lokaal project klaar staan om met versiebeheer in te werken.
 
