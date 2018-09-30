@@ -102,7 +102,7 @@ git add bestandsnaam
 ```
 C:\Users\UsersName\Documents\EersteOpdracht> git add testfile.md
 ```
-Als je meerdere bestanden hebt die je wil toevoegen, ga je ze niet op die manier toevoegen aan de Staging area, maar doe je alles in 1 keer:  
+Als je meerdere bestanden hebt die je wil toevoegen, ga je ze niet op die manier toevoegen aan de *Staging area*, maar doe je alles in 1 keer:  
 ```
 C:\Users\UsersName\Documents\EersteOpdracht> git add . 
 ```
