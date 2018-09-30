@@ -38,7 +38,7 @@ Maak een folder 'EersteOpdracht' aan in verkenner, rechtsklik op deze map en sel
 
 Je hebt bij het accepteren van de GitHub classroom invite een eigen repository gekregen, namelijk de repository die je nu hier ziet! Deze repository gaan we nu koppelen aan onze lokale repository.
 
-Eenmaal in de map doe je ```git clone https://github.com/gebruikersnaam/projectnaam.git .``` (**vergeet het punt niet**), nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is, en heb je tegelijk de startbestanden gedownload. In de Windows Verkenner in de map EersteOpdracht is er nu een verborgen map ‘.git’. [Zet verborgen items zichtbaar in het Beeld-lint](https://support.microsoft.com/en-us/help/4028316/windows-view-hidden-files-and-folders-in-windows-10) en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
+Eenmaal in de map doe je ```git clone https://github.com/gebruikersnaam/projectnaam.git .``` (**vergeet het punt niet**), het kan zijn dat je je gebruikernaam en paswoord moet ingeven (zeker als je nog nooit met Git gewerkt hebt). Nu heb je van de map een repository gemaakt, waarbinnen versiebeheer mogelijk is, en heb je tegelijk de startbestanden gedownload. In de Windows Verkenner in de map EersteOpdracht is er nu een verborgen map ‘.git’. [Zet verborgen items zichtbaar in het Beeld-lint](https://support.microsoft.com/en-us/help/4028316/windows-view-hidden-files-and-folders-in-windows-10) en je zal deze map zien. Zoals eerder al aangegeven, gaat hier de metadata van de commits in opgeslagen worden.  
 
 Je kan nu bijvoorbeeld 'git status' uitvoeren, dit commando zal wat informatie over de huidige git repository tonen. Onder andere de huidige branch (master in dit geval) wordt getoond. 
 ```
@@ -139,7 +139,7 @@ Er wordt door Git een tree opgebouwd, waarin de verschillende commits worden opg
 C:\Users\UsersName\Documents\EersteOpdracht> git worktree list
 ```
 
-Wil je een overzicht van de Git log:
+Wil je een overzicht van de Git log (hierin zal je al je commit messages terugvinden:
 ```
 C:\Users\UsersName\Documents\EersteOpdracht> git log
 ```
@@ -167,7 +167,7 @@ Maak nu in Windows verkenner in de projectmap een tekstbestand **testBestand.txt
 Aan de prompt typ je `ls` en krijg je een lijst met de aanwezige bestanden en mappen. Bij een `git status` zie je nu dat de nieuwe file opnieuw aangegeven wordt bij Untracked Files. Je krijgt de boodschap dat je branch up-to-date is met ‘origin/master’, maar dat er wel nog een bestand in zit, dat niet tot het Git project behoort (en dus enkel in de lokale Working area zit). En je krijgt dan de boodschap hoe je dat bestand kan opnemen in de staging area, zodat bij een volgende commit het automatisch in je masterbranch zit.  
 
 Je doet dus terug ```C:\Users\UsersName\Documents\EersteOpdracht>git add testbestand.txt``` om het bestand te stagen.
-Nu doen we weer een commit en *lokaal* zit alles in de master branch. Maar om deze versie nu ook online te plaatsen in de repository op GitHub, moet je opnieuw een push commando utivoeren.
+Nu doen we **weer een commit** en *lokaal* zit alles in de master branch. Maar om deze versie nu ook online te plaatsen in de repository op GitHub, moet je opnieuw een push commando utivoeren.
 Dus doe je nu weer: ```C:\Users\UsersName\Documents\EersteOpdracht> git push -u origin master ```. Hierna heb je lokaal en remote dezelfde versie van je project staan.  
 
 ## Remote pullen naar lokaal
@@ -227,7 +227,7 @@ Je ziet: het was nu maar 1 regel en toch vroeg het al je aandacht om dit juist o
 >**Dus**: Altijd zo snel mogelijk commits (van logische blokken) doen en pushen naar GitHub, evenals voor start nieuwe code steeds een pull, zelfs als je zelf net gepusht hebt. Alleen zo blijf je sommige problemen steeds een stapje voor. 
 Een andere manier om problemen voor te blijven is goede afspraken maken: Werkverdelingen en goede ontwerpen maken met losse koppelingen tussen de onderdelen. Op die manier probeer je zo goed mogelijk te vermijden dat verschillende personen aan dezelfde bestanden aan het werken zijn.
 
-Vroeg of laat ga je toch een merge probleem tegen komen, weet dan dat je hier geleerd hebt hoe je die best oplost. Soms moet je op zo een moment met je collega(‘s) overleggen hoe het moet opgelost worden. Vergeet dan niet dat issues, in punt 6, hier een goed hulpmiddel kunnen zijn. (Pull requests kunnen hier ook voor gebruikt worden, maar dit wordt in deze cursus niet behandeld.)   
+Vroeg of laat ga je toch een merge probleem tegen komen, weet dan dat je hier geleerd hebt hoe je die best oplost. Soms moet je op zo een moment met je collega(‘s) overleggen hoe het moet opgelost worden. Vergeet dan niet dat issues, in punt 6, hier een goed hulpmiddel kunnen zijn. (Pull requests kunnen hier ook voor gebruikt worden, maar dit wordt nu nog niet behandeld.)   
 Bepaalde GUI's voor Git voorzien ook mooiere voorstellingen van merge conflicts en geven je een aantal tools om deze op te lossen.
 
 ## Extra: Branches
@@ -270,7 +270,7 @@ Je kan later dit .gitignore bestand ook nog gaan toevoegen. Op GitHub staan er v
 Denk er wel aan, dat als je later een .gitignore file toevoegt, deze er enkel voor zorgt dat bepaalde dingen niet meer worden meegenomen. Dingen die je al door een commit / push aan je project hebt toegevoegd voor die .gitignore blijven erin en moet je dus zelf gaan verwijderen.   
 
 ## Extra: GitHub MarkDown gebruiken
-Deze cursus is opgemaakt door gebruik te maken van GitHub Markdown. 
+Dit document is opgemaakt door gebruik te maken van GitHub Markdown. 
 Als je tekst in je project wil toevoegen, doe dit niet in een Word bestand, maar in een .md bestand. Het voordeel van het gebruik van dit soort bestanden, is het feit dat Git elke verandering hierin ook detecteert. Je kan dus ook in je tekstdocumenten aan versiebeheer doen. Documenten opgemaakt met Word zijn digitale bestanden en wijzigingen hierin worden door Git niet gedetecteerd.  
 De regels zijn heel simpel: door het toevoegen van bepaalde tekens of spaties gaat GitHub een bepaalde opmaak toepassen op je document. Alle regels hier uitgebreid weergeven zou simpel knip en plakwerk worden uit de site die GitHub ter beschikking stelt. Daarom bekijk je best de spelregels op:   
 [GitHub MarkDown spelregels](http://www.markdowntutorial.com/). 
