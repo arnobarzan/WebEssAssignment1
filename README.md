@@ -207,7 +207,7 @@ In GitHub voeg je in het testbestand.txt een tweede regel tekst toe en commit di
 
 Lokaal ga je in testbestand.txt ook een tweede regel tekst toevoegen.  
  
-Nu open je Git bash. In je project folder doe je git status. Nu zie je dat je lokaal iets hebt veranderd en dat je dat nog moet toevoegen aan je project. Doe nu weer git add testBestand.txt en een commit. Nu ga je dit naar je remote repo pushen.  
+Nu open je Git bash. In je project folder Voorbeeld doe je git status. Nu zie je dat je lokaal iets hebt veranderd en dat je dat nog moet toevoegen aan je project. Doe nu weer git add testBestand.txt en een commit. Nu ga je dit naar je remote repo pushen.  
 
 Oei, dit lukt precies niet: remote staat er een andere versie van je project dan die, die je lokaal gewijzigd hebt. Voorstel is om eerst een git pull uit te voeren, zodat je lokaal project up-to-date is. Dit ga je nu proberen.   
 
