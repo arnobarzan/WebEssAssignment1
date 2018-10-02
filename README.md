@@ -139,7 +139,7 @@ Er wordt door Git een tree opgebouwd, waarin de verschillende commits worden opg
 C:\Users\UsersName\Documents\EersteOpdracht> git worktree list
 ```
 
-Wil je een overzicht van de Git log (hierin zal je al je commit messages terugvinden:
+Wil je een overzichtje van de Git log (hierin zal je al je commit messages terugvinden:
 ```
 C:\Users\UsersName\Documents\EersteOpdracht> git log
 ```
